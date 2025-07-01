@@ -1,0 +1,135 @@
+.ppq-audio {
+
+  .ppq-pinboard-container-inner {
+    position: relative;
+  }
+
+  .ppq-pinboard {
+    display: block;
+
+    &.developer-mode {
+      position: relative;
+      z-index: 0;
+      opacity: 0.4;
+    }
+  }
+
+  .ppq-pin {
+    text-decoration: none;
+    position: absolute;
+    z-index: 0;
+    visibility: hidden;
+
+    &.in-use {
+      visibility: visible;
+    }
+
+    .ppq-correct-icon {
+      display: none;
+    }
+
+    .ppq-incorrect-icon {
+      display: none;
+    }
+
+    .no-touch &:hover {
+    	.ppq-icon {
+    		color: @item-color-inverted-hover;
+    		background-color: @item-color-hover;
+    	}
+    }
+  }
+
+  .ppq-icon {
+    display: none;
+    padding: @item-padding;
+  	font-size: (@icon-size*1.5);
+  	width: auto;
+  	height: auto;
+    color: @item-color-inverted;
+    background-color: @item-color;
+    border-radius: 50%;
+
+    &.ppq-pin-icon {
+      display: block;
+    }
+
+    &.ppq-correct-icon {
+      color: @validation-success-inverted;
+      background-color: @validation-success;
+    }
+
+    &.ppq-incorrect-icon {
+      color: @validation-error-inverted;
+      background-color: @validation-error;
+    }
+  }
+
+  .ppq-correct-zone {
+    position: absolute;
+    background-color: #f55;
+  }
+
+  .ppq-widget {
+    &:not(.submitted) {
+      cursor: pointer;
+
+      &.show-pins {
+        .ppq-pinboard {
+          cursor: default;
+        }
+
+        .ppq-pin {
+          cursor: pointer;
+        }
+      }
+  	}
+
+    &.show-user-answer {
+      .ppq-pin-icon {
+        display: none;
+      }
+
+      .incorrect {
+        .ppq-incorrect-icon {
+          display: block;
+        }
+      }
+
+      .correct {
+        .ppq-correct-icon {
+          display: block;
+        }
+      }
+    }
+
+    &.show-correct-answer {
+      .ppq-pin-icon {
+        display: none;
+      }
+
+      .incorrect .ppq-correct-icon,
+      .correct .ppq-correct-icon {
+        display: block;
+      }
+    }
+
+    &.submitted {
+      .ppq-pin {
+        .no-touch &:hover {
+          cursor: default;
+
+          .ppq-correct-icon {
+            color: @validation-success-inverted;
+            background-color: @validation-success;
+          }
+
+          .ppq-incorrect-icon {
+            color: @validation-error-inverted;
+            background-color: @validation-error;
+          }
+        }
+      }
+    }
+  }
+}

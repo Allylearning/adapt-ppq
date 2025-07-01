@@ -1,0 +1,30 @@
+<div class="ppq-inner component__inner" role="region" aria-label="{{_globals._components._ppq._ariaRegion}}">
+    {{> component this}}
+    <div class="ppq-widget component__widget{{#if _showPinsOnLoad}} show-pins{{/if}}{{#unless _isEnabled}} is-disabled {{#if _isComplete}} complete submitted show-user-answer {{#if _isCorrect}}correct{{/if}} {{/if}} {{/unless}}">
+        <div class="ppq-other-device {{#unless _showOtherDeviceCompletionMessage}}u-display-none{{/unless}}">{{{compile _globals._components._ppq.otherDeviceCompletionMessage}}}</div>
+        <div class="ppq-pinboard-container {{#if _showOtherDeviceCompletionMessage}}u-display-none{{/if}}">
+            <div class="ppq-pinboard-container-inner">
+
+                {{#each _items}}
+                <button
+                    class="ppq-hotspot-btn"
+                    type="button"
+                    tabindex="0"
+                    aria-label="{{_accessibilityLabel}}"
+                    data-index="{{@index}}">
+                    <span class="visually-hidden">{{_accessibilityLabel}}</span>
+                </button>
+                {{/each}}
+
+                <div class="ppq-boundary">
+                    <img class="ppq-pinboard js-ppq-pinboard {{#if _developerMode}}developer-mode{{/if}}" src="{{_pinboardDesktop.src}}" title="{{_pinboardDesktop.title}}" alt="{{_pinboardDesktop.title}}" draggable="false" style="-moz-user-select: none;" ondragstart="return false;"/>
+                </div>
+
+            </div>
+            <span class="ppq-debug"></span>
+        </div>
+    </div>
+    <div>
+        <div class="btn__container"></div>
+    </div>
+</div>

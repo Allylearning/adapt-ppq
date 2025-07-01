@@ -1,0 +1,16 @@
+{
+  "name": "adapt-ppq-audio",
+  "version": "4.1.3",
+  "framework": ">=5.8",
+  "homepage": "https://github.com/deltanet/adapt-ppq-audio",
+  "issues": "https://github.com/deltanet/adapt-ppq-audio/issues",
+  "displayName" : "Pin Point Question",
+  "component" : "ppq-audio",
+  "description": "A question component that requires users to correctly position one or more pins on an image.",
+  "main": "/js/adapt-ppq.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}
