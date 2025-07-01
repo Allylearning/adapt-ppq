@@ -19,10 +19,7 @@ export default class PinView extends Backbone.View {
   initialize() {
     this.state = new Backbone.Model();
     this.render();
-    this.$el.attr({
-      role: 'button',
-      tabindex: '0'
-    });
+    this.$el.attr('aria-hidden', 'true');
   }
 
   render() {
