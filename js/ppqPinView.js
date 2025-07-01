@@ -3,7 +3,7 @@ import Adapt from 'core/js/adapt';
 export default class PinView extends Backbone.View {
 
   tagName() {
-    return 'a';
+    return 'div';
   }
 
   className() {
@@ -19,7 +19,10 @@ export default class PinView extends Backbone.View {
   initialize() {
     this.state = new Backbone.Model();
     this.render();
-    this.$el.attr('href', '#');
+    this.$el.attr({
+      role: 'button',
+      tabindex: '0'
+    });
   }
 
   render() {
