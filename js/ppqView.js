@@ -384,12 +384,6 @@ class PpqView extends QuestionView {
       this.model.checkCanSubmit();
     }
   }
-}
-
-PpqView.template = 'ppq';
-
-export default PpqView;
-
   onHotspotActivated(event) {
     event.preventDefault();
     const index = parseInt(event.currentTarget.getAttribute('data-index'));
@@ -427,3 +421,8 @@ export default PpqView;
 
     this.checkCompletionStatus();
   }
+}
+
+PpqView.template = 'ppq';
+
+export default PpqView;
