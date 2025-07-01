@@ -11,7 +11,8 @@
                     type="button"
                     tabindex="0"
                     aria-label="{{_accessibilityLabel}}"
-                    data-index="{{@index}}">
+                    data-index="{{@index}}"
+                    style="position: absolute; left: {{desktop.left}}%; top: {{desktop.top}}%; width: {{desktop.width}}%; height: {{desktop.height}}%;">
                     <span class="visually-hidden">{{_accessibilityLabel}}</span>
                 </button>
                 {{/each}}
