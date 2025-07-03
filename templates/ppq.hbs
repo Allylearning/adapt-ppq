@@ -10,10 +10,10 @@
                     class="ppq-hotspot-btn"
                     type="button"
                     tabindex="0"
-                    aria-label="{{_accessibilityLabel}}"
+                    aria-label="{{#if _accessibilityLabel}}{{_accessibilityLabel}}{{else}}Pin {{@index}}{{/if}}"
                     data-index="{{@index}}"
                     style="position: absolute; left: {{desktop.left}}%; top: {{desktop.top}}%; width: {{desktop.width}}%; height: {{desktop.height}}%;">
-                    <span class="visually-hidden">{{_accessibilityLabel}}</span>
+                    <span class="visually-hidden">{{#if _accessibilityLabel}}{{_accessibilityLabel}}{{else}}Pin {{@index}}{{/if}}</span>
                 </button>
                 {{/each}}
 
